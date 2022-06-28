@@ -11,16 +11,21 @@ export function App() {
       name: "mi segunda tarea",
       done: false,
     },
-    ,
     {
       name: "mi tercer tarea",
       done: false,
     },
   ]);
 
+  function createNewTask(taskName) {
+    if (!taskItems.find((task) => task.name === taskName)) {
+      setTaskItems([...taskItems, { name: taskName, done: false }]);
+    }
+  }
+
   return (
     <div className="App">
-      <TaskCreator />
+      <TaskCreator createNewTask={createNewTask} />
 
       <table>
         <thead>
