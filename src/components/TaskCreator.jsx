@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-export const TaskCreator = (props) => {
+export const TaskCreator = ({ createNewTask }) => {
   const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.createNewTask(newTaskName);
-    localStorage.setItem("tasks", newTaskName);
+    createNewTask(newTaskName);
     setNewTaskName("");
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
