@@ -4,6 +4,11 @@ export const TaskCreator = ({ createNewTask }) => {
   const [newTaskName, setNewTaskName] = useState("");
 
   const handleSubmit = (event) => {
+    if (newTaskName.trim() === "") {
+      alert("Please enter a task name");
+      return;
+    }
+
     event.preventDefault();
     createNewTask(newTaskName);
     setNewTaskName("");
