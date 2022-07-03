@@ -11,14 +11,19 @@ export const TaskCreator = ({ createNewTask }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Ingresa nueva tarea"
-          value={newTaskName}
-          onChange={(event) => setNewTaskName(event.target.value)}
-        />
-        <button>Save Task</button>
+      <form onSubmit={handleSubmit} className="my-2 row">
+        <div className="col-9">
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Ingresa nueva tarea"
+            value={newTaskName}
+            onChange={(event) => setNewTaskName(event.target.value)}
+          />
+        </div>
+        <div className="col-3">
+          <button className="btn btn-success btn-sm">Save Task</button>
+        </div>
       </form>
     </div>
   );

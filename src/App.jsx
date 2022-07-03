@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { VisibilityControl } from "./components/VisibilityControl.jsx";
 import { TaskCreator } from "./components/TaskCreator.jsx";
 import { TaskTable } from "./components/TaskTable.jsx";
+import { Container } from "./components/Container";
 
 export function App() {
   const [taskItems, setTaskItems] = useState([]);
@@ -34,8 +35,8 @@ export function App() {
     localStorage.setItem("tasks", JSON.stringify(taskItems));
   }, [taskItems]);
   return (
-    <div className="App">
-      <div className="container">
+    <main className="bg-dark vh-100 text-white">
+      <Container>
         <TaskCreator createNewTask={createNewTask} />
         <TaskTable tasks={taskItems} toggleTask={toggleTask} />
         <VisibilityControl
@@ -50,7 +51,7 @@ export function App() {
             showCompleted={showCompleted}
           />
         ) : null}
-      </div>
-    </div>
+      </Container>
+    </main>
   );
 }
