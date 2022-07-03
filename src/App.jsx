@@ -30,6 +30,11 @@ export function App() {
     <div className="App">
       <TaskCreator createNewTask={createNewTask} />
       <TaskTable tasks={taskItems} toggleTask={toggleTask} />
+      <TaskTable
+        tasks={taskItems}
+        toggleTask={toggleTask}
+        showCompleted={true}
+      />
     </div>
   );
 }
