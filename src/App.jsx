@@ -35,20 +35,22 @@ export function App() {
   }, [taskItems]);
   return (
     <div className="App">
-      <TaskCreator createNewTask={createNewTask} />
-      <TaskTable tasks={taskItems} toggleTask={toggleTask} />
-      <VisibilityControl
-        isChecked={showCompleted}
-        setShowCompleted={(checked) => setShowCompleted(checked)}
-        cleanTasks={cleanTasks}
-      />
-      {showCompleted === true ? (
-        <TaskTable
-          tasks={taskItems}
-          toggleTask={toggleTask}
-          showCompleted={showCompleted}
+      <div className="container">
+        <TaskCreator createNewTask={createNewTask} />
+        <TaskTable tasks={taskItems} toggleTask={toggleTask} />
+        <VisibilityControl
+          isChecked={showCompleted}
+          setShowCompleted={(checked) => setShowCompleted(checked)}
+          cleanTasks={cleanTasks}
         />
-      ) : null}
+        {showCompleted === true ? (
+          <TaskTable
+            tasks={taskItems}
+            toggleTask={toggleTask}
+            showCompleted={showCompleted}
+          />
+        ) : null}
+      </div>
     </div>
   );
 }
