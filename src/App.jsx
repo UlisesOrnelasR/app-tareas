@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { VisibilityControl } from "./components/VisibilityControl.jsx";
-import { TaskCreator } from "./components/TaskCreator.jsx";
-import { TaskTable } from "./components/TaskTable.jsx";
-import { Container } from "./components/Container";
+import { TaskCreator, TaskTable, Container } from "./components";
 
 export function App() {
   const [taskItems, setTaskItems] = useState([]);
